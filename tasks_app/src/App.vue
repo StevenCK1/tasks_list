@@ -1,16 +1,30 @@
 <template>
   <div id="app">
-    <TaskInput />
+    <TaskInput @clicked="handleClick" />
+    <TaskListItems />
+    <div>{{ taskList }}</div>
   </div>
 </template>
 
 <script>
 import TaskInput from "./components/TaskInput.vue";
+import TaskListItems from "./components/TaskListItems.vue";
 
 export default {
   name: "App",
   components: {
     TaskInput,
+    TaskListItems,
+  },
+  data() {
+    return {
+      taskList: [],
+    };
+  },
+  methods: {
+    handleClick(value) {
+      this.taskList.push(value);
+    },
   },
 };
 </script>

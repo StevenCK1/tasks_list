@@ -13,7 +13,6 @@
       <option v-for="option in options" :key="option">{{ option }}</option>
     </select>
     <button v-on:click="handleClick">Save new task</button>
-    <div>{{ taskList }}</div>
   </div>
 </template>
 
@@ -26,7 +25,6 @@ export default {
       selected: "",
       options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       number: 0,
-      taskList: [],
     };
   },
   methods: {
@@ -41,7 +39,8 @@ export default {
         id: this.number,
       };
 
-      this.taskList.push(newTask);
+      // emit taskList to parent
+      this.$emit("clicked", newTask);
     },
   },
 };
