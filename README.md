@@ -51,6 +51,10 @@ _Resouce used:_
 1. Button next to each task
 2. Delete based on ID
 
+_Resouce used:_
+
+- [v-for index argument](https://v2.vuejs.org/v2/guide/list.html#Mapping-an-Array-to-Elements-with-v-for)
+
 ### (Optional) The ability to filter to tasks below a certain priority (e.g. display only tasks with a priority
 
 below 3)

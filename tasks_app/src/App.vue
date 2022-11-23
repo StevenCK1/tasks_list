@@ -5,7 +5,7 @@
       {{ isPriority ? "Sort by order added" : "Sort by priority" }}
     </button>
 
-    <TaskListItems :task-list="taskList" @remove="taskList.splice(index, 1)" />
+    <TaskListItems :task-list="taskList" @remove="removeTask" />
   </div>
 </template>
 
@@ -35,6 +35,9 @@ export default {
       this.isPriority = !this.isPriority;
       //call computed sortTaskList function
       this.sortTaskList;
+    },
+    removeTask(value) {
+      this.taskList.splice(value, 1);
     },
   },
   computed: {
