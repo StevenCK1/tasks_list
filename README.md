@@ -24,6 +24,11 @@ _Resouce used:_
 1. Component to have text, priority number (generate each line with id)
 2. list components to show different tasks
 
+_Resouce used:_
+
+- [Pass data to Parent](https://forum.vuejs.org/t/passing-data-back-to-parent/1201)
+- [Props](https://v2.vuejs.org/v2/guide/components-props.html)
+
 ### The ability to order the tasks by priority or the order they were added to the list
 
 button to order priority

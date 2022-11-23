@@ -1,8 +1,7 @@
 <template>
   <div id="app">
     <TaskInput @clicked="handleClick" />
-    <TaskListItems />
-    <div>{{ taskList }}</div>
+    <TaskListItems :task-list="taskList" />
   </div>
 </template>
 
