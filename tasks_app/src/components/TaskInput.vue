@@ -3,30 +3,37 @@
     <h2>Create a new task</h2>
 
     <label for="textInput">Task description:</label>
-    <input type="text" id="textInput" />
+    <input v-model="message" id="taskInputText" />
     <label for="priorityNumber"
       >Set the priority of the task (1 is most urgent, 10 is least
       urgent):</label
     >
-    <select id="priorityNumber">
-      <option value="1">1</option>
-      <option value="2">2</option>
-      <option value="3">3</option>
-      <option value="4">4</option>
-      <option value="5">5</option>
-      <option value="6">6</option>
-      <option value="7">7</option>
-      <option value="8">8</option>
-      <option value="9">9</option>
-      <option value="10">10</option>
+    <select v-model.number="selected" id="priorityNumber">
+      <option disabled value="">Please Select</option>
+      <option v-for="option in options" :key="option">{{ option }}</option>
     </select>
-    <button type="button">Save</button>
+    <button v-on:click="saveNewTask">Save new task</button>
+    <div>{{ number }}</div>
   </div>
 </template>
 
 <script>
 export default {
   name: "TaskInput",
+  data() {
+    return {
+      message: "",
+      selected: "",
+      options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
+      number: 0,
+    };
+  },
+  methods: {
+    saveNewTask: function () {
+      // counter for the order task was added
+      this.number++;
+    },
+  },
 };
 </script>
 
