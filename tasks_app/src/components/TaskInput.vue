@@ -12,8 +12,8 @@
       <option disabled value="">Please Select</option>
       <option v-for="option in options" :key="option">{{ option }}</option>
     </select>
-    <button v-on:click="saveNewTask">Save new task</button>
-    <div>{{ number }}</div>
+    <button v-on:click="handleClick">Save new task</button>
+    <div>{{ taskList }}</div>
   </div>
 </template>
 
@@ -26,12 +26,22 @@ export default {
       selected: "",
       options: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10],
       number: 0,
+      taskList: [],
     };
   },
   methods: {
-    saveNewTask: function () {
-      // counter for the order task was added
+    handleClick: function () {
+      // counter for the order that the  new task was added
       this.number++;
+
+      // Add new task object to taskList array
+      const newTask = {
+        taskDescription: this.message,
+        prioriotyNumber: this.selected,
+        id: this.number,
+      };
+
+      this.taskList.push(newTask);
     },
   },
 };
