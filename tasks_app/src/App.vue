@@ -1,6 +1,10 @@
 <template>
   <div id="app">
     <TaskInput @clicked="handleClick" />
+    <button v-on:click="toggleView">
+      {{ isPriority ? "Sort by order added" : "Sort by priority" }}
+    </button>
+
     <TaskListItems :task-list="taskList" />
   </div>
 </template>
@@ -18,11 +22,38 @@ export default {
   data() {
     return {
       taskList: [],
+      isPriority: false,
     };
   },
   methods: {
     handleClick(value) {
+      // add newTask object from TaskInput component and push to taskList array within data
       this.taskList.push(value);
+    },
+    toggleView() {
+      // reverse boolean for toggle view
+      this.isPriority = !this.isPriority;
+      //call computed sortTaskList function
+      this.sortTaskList;
+    },
+  },
+  computed: {
+    // Logic is to manipulate the taskList array to display task in the wanted order
+    sortTaskList() {
+      let sortedTasks = this.taskList;
+
+      if (this.isPriority) {
+        // sort by priorityNumber
+        sortedTasks = sortedTasks.sort((a, b) => {
+          return a.priorityNumber - b.priorityNumber;
+        });
+      } else if (!this.isPriority) {
+        // sort by order dated (i.e. by id)
+        sortedTasks = sortedTasks.sort((a, b) => {
+          return a.id - b.id;
+        });
+      }
+      return sortedTasks;
     },
   },
 };
