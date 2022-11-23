@@ -28,6 +28,7 @@ _Resouce used:_
 
 - [Pass data to Parent](https://forum.vuejs.org/t/passing-data-back-to-parent/1201)
 - [Props](https://v2.vuejs.org/v2/guide/components-props.html)
+- [v-for](https://www.digitalocean.com/community/tutorials/vuejs-iterating-v-for#using-v-for-with-objects)
 
 ### The ability to order the tasks by priority or the order they were added to the list
 
@@ -39,6 +40,11 @@ button to order priority
 button to order by time added
 
 1. check the id value
+
+_Resouce used:_
+
+- [Displaying filtered/sorted results](https://v2.vuejs.org/v2/guide/list.html#Displaying-Filtered-Sorted-Results)
+- [Sorting arrays JavaScript](https://www.w3schools.com/js/js_array_sort.asp)
 
 ### The ability to delete a task
 
