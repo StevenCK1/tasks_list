@@ -3,6 +3,7 @@
     <li v-for="task in taskList" :id="`task-${task.id}`" :key="task.id">
       <p>Your task: {{ task.taskDescription }}</p>
       <p>Priority Number: {{ task.priorityNumber }}</p>
+      <button @click="$emit('remove')">Remove</button>
     </li>
   </ul>
 </template>

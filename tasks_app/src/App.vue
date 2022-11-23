@@ -5,7 +5,7 @@
       {{ isPriority ? "Sort by order added" : "Sort by priority" }}
     </button>
 
-    <TaskListItems :task-list="taskList" />
+    <TaskListItems :task-list="taskList" @remove="taskList.splice(index, 1)" />
   </div>
 </template>
 
