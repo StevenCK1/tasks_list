@@ -35,7 +35,7 @@ export default {
       // Add new task object to taskList array
       const newTask = {
         taskDescription: this.message,
-        prioriotyNumber: this.selected,
+        priorityNumber: this.selected,
         id: this.number,
       };
 

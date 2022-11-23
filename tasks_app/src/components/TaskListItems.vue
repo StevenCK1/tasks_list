@@ -1,8 +1,8 @@
 <template>
   <ul class="taskListItems">
-    <li v-for="task in taskList" :key="task.id">
-      <p>{{ task.taskDescription }}</p>
-      <p>{{ task.priorityNumber }}</p>
+    <li v-for="task in taskList" :key="task.taskDescription">
+      <p>Your task: {{ task.taskDescription }}</p>
+      <p>Priority Number: {{ task.priorityNumber }}</p>
     </li>
   </ul>
 </template>
